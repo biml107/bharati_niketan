@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharati Niketan</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        h1{
+            text-align: center;
+            
+            color: red;
+        }
+        body{
+            /* text-align: center; */
+        }
+        input{
+            width: 50px;
+
+        }
+        .borderCandidate{
+            font-size: large;
+            background-color: aqua;
+            display: inline-block;
+            width: 80%;
+        }
+       #addGuest{
+           position: sticky;
+           top: 0;
+       }
+       #addCandidate>button{
+           border-radius: 10px;
+         align-items: center;
+        
+
+       }
+       #addCandidate{
+        position: sticky;
+    top: 40;
+    left:auto;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    
+       }
+       #heading{
+           position: sticky;
+           top: 0;
+           background-color: antiquewhite;
+       }
+
+       .ExpenditureInputBox{
+          overflow-x: scroll;
+           border: none;
+           width: 100%;
+     background-color: blanchedalmond;
+     height: 50px;
+     font-size: large;
+     border-radius: 10px;
+     box-shadow: 20px 20px 50px 10px pink inset;
+       }
+       table{
+           width: 100%;
+       }
+       #output{
+           padding:10px;
+       }
+       #outputTable{
+        margin-top: 20px;
+     border: 0px;
+     border-radius: 10px;
+    
+     width: 100%;
+   
+     border-collapse: collapse;
+       }
+       table tr:nth-child(even){
+    background-color:white;
+   
+   }
+   table tr:nth-child(odd){
+    background-color:rgb(221,221,221);
+   }
+   th{
+     text-align: center;
+     
+   }
+   table tr:first-child{
+    background-color:rgb(33, 90, 142);
+    color: white;
+    border-top-left-radius: 10px;
+    
+   }
+   tr:first-child th:first-child {
+     border-top-left-radius: 10px;
+   }
+   tr:first-child th:last-child {
+     border-top-right-radius: 10px;
+   }
+   tr:last-child td:first-child {
+     border-bottom-left-radius: 10px;
+   }
+   tr:last-child td:last-child {
+     border-bottom-right-radius: 10px;
+   }
+    
+   #container{
+    margin-top: 20px;
+     border: 0px;
+     border-radius: 10px;
+    
+     width: 100%;
+   
+     border-collapse: collapse;
+     
+   }
+   td{
+    
+     text-align: center;
+   }
+   tr{
+       height: 50px;
+   }
+    </style>
+</head>
+<body>
+    <div id="heading"><h1>Bharati Niketan</h1>
+        <div id="addCandidate">
+            <button onclick="addBorder()">addBorder</button>
+            <button onclick="addGuest()">addGuest</button>
+            <button onclick="saveDetails()">save</button>
+            <button onclick="calculate()">OK</button>
+        </div>
+    </div>
+  
+    <div id="borderDetails">Border Details
+      Name   meal PaidMoney
+    <div  ><span class="borderCandidate">SAGAR DA</span ><input class="inputMeal" type="number" value="0"><input class="PaidMoney" type="number"></div>
+    <div  ><span class="borderCandidate">BIMAL KUMAR</span ><input class="inputMeal" type="number" value="0"><input class="PaidMoney" type="number"></div>
+    <div  ><span class="borderCandidate">KISHOR KUMAR</span ><input class="inputMeal" type="number" value="0"><input class="PaidMoney" type="number"></div>
+    <div  ><span class="borderCandidate">NALINI MAHATO</span ><input class="inputMeal" type="number" value="0"><input class="PaidMoney" type="number"></div>    
+        <div  ><span class="borderCandidate">BIKASH MAHATO</span ><input class="inputMeal" type="number" value="0"><input class="PaidMoney" type="number"></div>
+            <div  ><span class="borderCandidate">LOKNATH MAHATO</span ><input class="inputMeal" type="number" value="0"><input class="PaidMoney" type="number"></div>
+            <div  ><span class="borderCandidate">PRANAB MAHATO</span ><input class="inputMeal" type="number" value="0"><input class="PaidMoney" type="number"></div>
+            <div  ><span class="borderCandidate">MILAN MANDAL</span ><input class="inputMeal" type="number" value="0"><input class="PaidMoney" type="number"></div> 
+                <div  ><span class="borderCandidate">SACHIN MAHATO</span ><input class="inputMeal" type="number" value="0"><input class="PaidMoney" type="number"></div>
+                    <div  ><span class="borderCandidate">PANKAJ MAHATO</span ><input class="inputMeal" type="number" value="0"><input class="PaidMoney" type="number"></div>
+
+                        
+</div>
+ <div >
+     Guest Details
+     <ul id="guestDetails">
+
+     </ul>
+ 
+ </div>
+ <div id="inputExpenditure">
+    <div><span>Grocery</span><input type="text" name="" class="ExpenditureInputBox" id="inputGrocery"></div>
+    <div><span>Marketing</span> <input type="text" class="ExpenditureInputBox" id="inputMarketing"></div>
+    <div><span>Cash+Establish</span> <input type="text" name="" class="ExpenditureInputBox" id="inputEstablish"></div>
+    
+ </div>
+ <div id="output">
+
+   <table id="outputTable">
+      <tr><th>NAME</th> <th>MEAL</th><th>Meal Ch</th><th>ESTAB</th> <th>RENT</th><th>TOTAL</th><th>PAID</th><th>DUE</th></tr>
+    
+   </table>
+   <h2>Guest</h2>
+   <table id="guestOutputTable">
+    <tr><th>Name</th><th>Meal</th><th>total</th><th>paid</th><th>due</th></tr>
+   </table>
+
+ </div>
+<Script src="script.js"></Script>
+</body>
+</html>
